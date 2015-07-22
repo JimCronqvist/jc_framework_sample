@@ -1,0 +1,28 @@
+{
+  "repositories": [
+    {
+      "type": "git",
+      "url": "git@github-jc_framework:/JimCronqvist/jc_framework.git"
+    },
+    {
+      "type": "git",
+      "type": "package",
+      "package": {
+        "name": "ilikenwf/nestedSortable",
+        "version": "2.0alpha",
+        "source": {
+          "url": "https://github.com/ilikenwf/nestedSortable.git",
+          "type": "git",
+          "reference": "2.0alpha"
+        }
+      }
+    }
+  ],
+  "require": {
+    "ilikenwf/nestedSortable": "@dev",
+    "JimCronqvist/jc_framework": "1.0.x-dev"
+  },
+  "config": {
+    "process-timeout": 600
+  }
+}
