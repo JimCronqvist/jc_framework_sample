@@ -2,7 +2,7 @@
 
 namespace App;
 
-use Jc\Hook\jc_hook;
+use Jc\Hook\Hook;
 
 ?>
 <!DOCTYPE html>
@@ -22,8 +22,8 @@ use Jc\Hook\jc_hook;
 <title><?php echo $html_title; ?></title>
 
 <?php
-jc_hook::execute('css');
-jc_hook::execute('js');
+Hook::execute('css');
+Hook::execute('js');
 ?>
 
 <style type="text/css">

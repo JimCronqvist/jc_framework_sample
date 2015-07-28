@@ -1,12 +1,12 @@
 <?php
 
-use Jc\Hook\jc_hook;
+use Jc\Hook\Hook;
 
 $tpl_path = str_replace('/hooks','',__DIR__ . '/templates/');
 
 if($uri == '/login' || 1)
 {
 	$title = 'Login';
-	jc_hook::register('layout', array('class' => 'Jc\\Engine\\jc_controller', 'method' => 'template', 'value' => array('tpl' => $tpl_path.'layout_login', 'html_title' => @$title)));
+	Hook::register('layout', array('class' => 'Jc\\Engine\\jc_controller', 'method' => 'template', 'value' => array('tpl' => $tpl_path.'layout_login', 'html_title' => @$title)));
 }
 ?>
