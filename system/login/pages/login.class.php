@@ -2,9 +2,9 @@
 
 namespace App;
 
-use Jc\Engine\jc_controller;
+use Jc\Engine\Controller;
 
-class login_controller extends jc_controller
+class login_controller extends Controller
 {
     public static function url_hook($uri)
     {

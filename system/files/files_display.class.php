@@ -2,11 +2,11 @@
 
 namespace App;
 
-use Jc\Engine\jc_controller;
+use Jc\Engine\Controller;
 use Jc\Filesystem\jc_file;
 
 
-class files_display extends jc_controller
+class files_display extends Controller
 {
     public static function url_hook($uri)
     {

@@ -2,9 +2,9 @@
 
 namespace App;
 
-use Jc\Engine\jc_controller;
+use Jc\Engine\Controller;
 
-class backend_index_controller extends jc_controller
+class backend_index_controller extends Controller
 {
     public static function url_hook($uri)
     {
