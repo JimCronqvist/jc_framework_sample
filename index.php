@@ -2,8 +2,8 @@
 
 namespace App;
 
-use Jc\Engine\jc_engine;
-use Jc\Hook\jc_hook;
+use Jc\Engine\Engine;
+use Jc\Hook\Hook;
 
 
 // Set default timezone.
@@ -26,12 +26,12 @@ else
 include_once(PATH_ROOT . 'vendor/JimCronqvist/jc_framework/src/engine.php');
 
 // Run the install method the first time you initiate this project.
-//jc_engine::install();
+//Engine::install();
 
 // Register routes
-jc_engine::route('/*', null, PATH_JC_FRAMEWORK, PATH_JC_APPLICATION_SYSTEM);
+Engine::route('/*', null, PATH_JC_APPLICATION_SYSTEM);
 
 // Execute the page.
-jc_engine::execute();
+Engine::execute();
 
 ?>
