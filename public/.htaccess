@@ -1,0 +1,48 @@
+
+# Default charset
+AddDefaultCharset UTF-8
+
+# Prevent directory listing
+Options -Indexes
+
+DirectoryIndex index.php index.html
+
+#Header add Access-Control-Allow-Origin "*"
+
+php_value error_log log/error_log.log
+php_value post_max_size 500M
+php_value upload_max_filesize 500M
+php_value memory_limit 2048M
+php_value max_execution_time 240
+php_value default_socket_timeout 240
+
+<Files .htaccess>
+    order allow,deny
+    deny from all
+</Files>
+
+<FilesMatch "bootstrap\.min\.(js|css)$">
+    Header set Cache-Control "max-age=604800, private, must-revalidate"
+</FilesMatch>
+
+<FilesMatch "\.(ttf|ttc|otf|eot|woff|woff2)$">
+    <IfModule mod_headers.c>
+        Header set Access-Control-Allow-Origin "*"
+    </IfModule>
+</FilesMatch>
+
+RewriteEngine On
+Rewritebase /
+
+# Redirect Trailing Slashes
+RewriteRule ^(.*)/$ /$1 [L,R=301]
+
+# Rewrite to www
+RewriteCond %{HTTP_HOST} ^example\.com
+RewriteRule (.*) http://www.example.com/$1 [R=301,L]
+
+# Handle the requests
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_URI} !^/server-status
+RewriteCond %{REQUEST_URI} !^/vendor/
+RewriteRule .* index.php? [L]
