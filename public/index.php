@@ -10,7 +10,7 @@ use Jc\Hook\Hook;
 date_default_timezone_set('Europe/Stockholm');
 
 // Config file
-require_once('../config.php');
+require_once(dirname(__DIR__) . '/config.php');
 
 // Vendor autoload.
 if(is_readable(PATH_ROOT . 'vendor/autoload.php'))
